@@ -1,0 +1,12 @@
+FROM node
+
+WORKDIR /usr/repo/docker
+
+COPY package.json ./
+
+COPY . .
+
+EXPOSE 4000
+
+CMD ["npm", "start"]
+
