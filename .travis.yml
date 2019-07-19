@@ -1,13 +1,14 @@
+language: node_js
 sudo: required
 services:
   - docker
 
 scripts:
-  - docker build -t lucamjjdocker/node .
-  - docker images lucamjjdocker/node .
+  - "docker build -t lucamjjdocker/node ."
+  - "docker images lucamjjdocker/node ."
 
 before_deploy:
-  - docker login -u ${dockerhub_password} -p ${dockerhub_user}
+  - "docker login -u ${dockerhub_password} -p ${dockerhub_user}"
 
 deploy:
   provider: script
